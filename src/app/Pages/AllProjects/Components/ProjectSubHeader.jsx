@@ -23,7 +23,9 @@ const SortByButton = () => {
     <div className="flex md:text-[15px] text-[10px] font-semibold gap-3">
       <span className="text-slate-300">Sort by</span>
       <div className="flex gap-1 items-center cursor-pointer">
-        <span className="text-slate-800">Recent Project</span>
+        <span className="text-slate-800 dark:text-slate-500">
+          Recent Project
+        </span>
         <KeyboardArrowDown sx={{ fontSize: "19px" }} />
       </div>
     </div>
