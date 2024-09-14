@@ -1,6 +1,8 @@
 "use client";
 import Sidebar from "./components/Sidebar";
+import ContextAppProvider from "./contextApp";
 import AllProjects from "./Pages/AllProjects/AllProjects";
+import AllTasksContainer from "./Pages/AllTasks/AllTasks";
 
 export default function Home() {
   return (
@@ -8,6 +10,7 @@ export default function Home() {
       <Sidebar />
       {/* All projects page */}
       <AllProjects />
+      {/* <AllTasksContainer /> */}
     </div>
   );
 }

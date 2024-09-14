@@ -5,10 +5,20 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { BorderAll, Logout, Splitscreen } from "@mui/icons-material";
+import { useContextApp } from "../contextApp";
 
 const Sidebar = () => {
+  const {
+    openSideBarObject: { openSideBar, setOpenSideBar },
+  } = useContextApp();
   return (
-    <div className="w-[85px] h-screen py-8 flex flex-col items-center justify-between border-r dark:border-slate-600 max-sm:hidden">
+    <div
+      className={`${
+        openSideBar
+          ? "w-[288px] fixed shadow-xl"
+          : "w-[97px] max-[940px]:hidden"
+      } h-screen py-8 flex flex-col items-center justify-between border-r bg-white dark:bg-darkBackground dark:border-slate-600 z-[90] transition-all`}
+    >
       <Logo />
       <Menu />
       <Profile />

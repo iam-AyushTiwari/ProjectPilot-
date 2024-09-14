@@ -3,8 +3,9 @@ import {
   Circle,
   DeleteOutlineOutlined,
   EditOutlined,
+  ListAlt,
 } from "@mui/icons-material";
-import { Tabs } from "@mui/material";
+import { Checkbox, List } from "@mui/material";
 import React from "react";
 
 const TaskList = () => {
@@ -14,21 +15,23 @@ const TaskList = () => {
       <div className="flex flex-col gap-4">
         <SingleTask />
         <SingleTask />
+        <SingleTask />
+        <SingleTask />
       </div>
     </div>
   );
 };
 
-const Task = () => {
+const Tabs = () => {
   return (
-    <div>
-      <div>
+    <div className="flex items-center gap-6 ml-3 mt-8 mb-5">
+      <div className="flex gap-2 text-lightPrimaryColor font-semibold cursor-pointer">
         <span>On Going Tasks</span>
         <span className="bg-lightPrimaryColor text-white px-2 rounded-md">
           7
         </span>
       </div>
-      <div className="text-slate-400 flex gap-2 items-center">
+      <div className="text-slate-400 flex gap-2 items-center cursor-pointer">
         <span>Completed Tasks</span>
         <span className="bg-slate-200 px-2 rounded-md">8</span>
       </div>
@@ -39,16 +42,18 @@ const Task = () => {
 const SingleTask = () => {
   return (
     <div className="flex gap-2 items-center">
-      <Checkbox />
-      <div className="w-full bg-white rounded-lg border border-slate-100 flex gap-3 items-centerb justify-center p-5 py-6">
+      <Checkbox className="dark:text-slate-500" />
+      <div className="w-full bg-white dark:bg-[#14213d] rounded-lg border border-slate-100 dark:border-none flex gap-3 items-center justify-between p-5 py-6">
         <div className="flex gap-3 items-center">
           <div>
             <div className="bg-orange-200 rounded-lg p-2 flex items-center justify-center">
-              <List className="text-orange-600" />
+              <ListAlt className="text-orange-600" />
             </div>
           </div>
           <div className="flex flex-col">
-            <span>Create the UI design of the task</span>
+            <span className="font-bold hover:text-orange-600 cursor-pointers">
+              Create the UI design of the task
+            </span>
             <div className="flex">
               <span className="text-slate-400 text-[13px] p-[2px]">
                 Project
@@ -60,12 +65,15 @@ const SingleTask = () => {
         <div className="flex gap-36 font-bold items-center">
           <div className="flex gap-2 items-center">
             <Cached className="text-[24px] text-slate-400" />
-            <span>In Progress</span>
+            <span className="text-[14px] text-slate-400">In Progress</span>
           </div>
         </div>
         {/* Priority */}
         <div className="flex gap-2 items-center">
-          <Circle className="text-[10px] text-green-600" />
+          <Circle
+            sx={{ fontSize: "10px" }}
+            className="text-[8px] text-green-600"
+          />
           <span className="text-[14px] text-slate-400">Low</span>
         </div>
         {/* Action button */}

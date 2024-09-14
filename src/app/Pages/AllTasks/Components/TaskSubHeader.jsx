@@ -21,7 +21,7 @@ const MyProjectText = () => {
       </div>
       <ul className="flex flex-col gap-[7px]">
         <li className="text-[17px] font-semibold flex gap-2 items-center">
-          <div className="text-slate-700 flex gap-2 items-center">
+          <div className="text-slate-700 dark:text-lightBackground flex gap-2 items-center">
             <span className="text-lg">All Projects</span>
             <span className="bg-slate-700 text-white text-[14px] p-[2px] px-2 rounded-md">
               6

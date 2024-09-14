@@ -1,4 +1,8 @@
-import React from "react";
+import { useContextApp } from "@/app/contextApp";
+import { Add, Search } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
+import React, { useEffect } from "react";
+import AddProjectButton from "./AddProjectButton";
 
 const TaskHeader = () => {
   return (
@@ -25,15 +29,6 @@ const SearchBar = () => {
         />
       </div>
     </div>
-  );
-};
-
-const AddProjectButton = () => {
-  return (
-    <button className="bg-orange-600 text-white px-2 pr-3 text-[14px] rounded-md flex gap-1 items-center">
-      <Add sx={{ fontSize: "22px" }} className="mt-[2px]" />
-      <span>New Task</span>
-    </button>
   );
 };
 

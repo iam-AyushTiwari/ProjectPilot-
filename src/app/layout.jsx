@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
 import { ThemeContextProvider } from "./contextAPI/ThemeContext";
+import ContextAppProvider from "./contextApp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,11 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <ThemeContextProvider>
-        <body className={poppins.variable}>{children}</body>
-      </ThemeContextProvider>
+      <ContextAppProvider>
+        <ThemeContextProvider>
+          <body className={poppins.variable}>{children}</body>
+        </ThemeContextProvider>
+      </ContextAppProvider>
     </html>
   );
 }
