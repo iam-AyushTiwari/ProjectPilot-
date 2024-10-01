@@ -8,9 +8,13 @@ export default function Home() {
   const handleClose = () => {
     setOpenSideBar(!openSideBar);
   };
+  const handleCloseProjectWindow = () => {
+    setOpenProjectWindow(!openProjectWindow);
+  };
   const {
     openSideBarObject: { openSideBar, setOpenSideBar },
     sidebarMenuObject: { sideBarMenu, setSideBarMenu },
+    openProjectWindowObject: { openProjectWindow, setOpenProjectWindow },
   } = useContextApp();
 
   const componentMap = {
@@ -26,8 +30,14 @@ export default function Home() {
     <div className="flex w-full h-screen poppins dark:bg-darkBackground bg-lightBackground dark:text-darkPrimaryColor text-lightPrimaryColor duration-200">
       {openSideBar && (
         <div
-          className="w-full h-full z-50 bg-slate-800/55 fixed opacity-45 backdrop-blur-xl"
+          className="w-full h-full z-[82] bg-slate-800/85 fixed opacity-45 backdrop-blur-xl"
           onClick={handleClose}
+        ></div>
+      )}
+      {openProjectWindow && (
+        <div
+          className="w-full h-full z-[82] bg-slate-800/85 fixed opacity-45 backdrop-blur-2xl"
+          onClick={handleCloseProjectWindow}
         ></div>
       )}
       <Sidebar />

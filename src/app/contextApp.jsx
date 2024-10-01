@@ -25,6 +25,8 @@ export default function ContextAppProvider({ children }) {
     },
   ]);
 
+  const [openProjectWindow, setOpenProjectWindow] = useState(false);
+
   useEffect(() => {
     function handleResize() {
       setIsMobileView(window.innerWidth <= 940);
@@ -49,6 +51,7 @@ export default function ContextAppProvider({ children }) {
       value={{
         openSideBarObject: { openSideBar, setOpenSideBar },
         sidebarMenuObject: { sideBarMenu, setSideBarMenu },
+        openProjectWindowObject: { openProjectWindow, setOpenProjectWindow },
       }}
     >
       {children}

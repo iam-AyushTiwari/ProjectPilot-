@@ -17,7 +17,7 @@ const Sidebar = () => {
         openSideBar
           ? "w-[288px] fixed shadow-xl"
           : "w-[97px] max-[940px]:hidden"
-      } h-screen py-8 flex flex-col items-center justify-between border-r bg-white dark:bg-darkBackground dark:border-slate-600 z-[90] transition-all`}
+      } h-screen py-8 flex flex-col items-center justify-between border-r bg-white dark:bg-darkBackground dark:border-slate-600 z-[90] md:z-[80] transition-all`}
     >
       <Logo />
       <Menu />

@@ -3,12 +3,14 @@ import { Menu, MenuList } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 import { useContextApp } from "@/app/contextApp";
+import ProjectWindow from "@/app/components/Windows/ProjectWindow";
 
 const ProjectHeader = () => {
   return (
     <div className="flex justify-between">
       <SearchBar />
       <AddProjectButton />
+      <ProjectWindow />
     </div>
   );
 };
@@ -16,6 +18,7 @@ const ProjectHeader = () => {
 const AddProjectButton = () => {
   const {
     openSideBarObject: { openSideBar, setOpenSideBar },
+    openProjectWindowObject: { openProjectWindow, setOpenProjectWindow },
   } = useContextApp();
 
   const toggleSideBar = () => {
@@ -25,7 +28,10 @@ const AddProjectButton = () => {
   };
   return (
     <div className="flex gap-3 items-center">
-      <button className="bg-orange-600 text-white px-2 h-9 pr-3 text-[14px] rounded-md flex gap-1 items-center">
+      <button
+        className="bg-orange-600 text-white px-2 h-9 pr-3 text-[14px] rounded-md flex gap-1 items-center"
+        onClick={() => setOpenProjectWindow(!openProjectWindow)}
+      >
         <Add sx={{ fontSize: "22px" }} className="mt-[2px]" />
         <span className="max-sm:hidden">New Project</span>
       </button>
